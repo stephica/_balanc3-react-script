@@ -1,4 +1,4 @@
-import React, {PropTypes, Component} from 'react';
+import React, { PropTypes, Component } from 'react';
 
 class PersonInput extends Component {
   constructor(props) {
@@ -13,11 +13,11 @@ class PersonInput extends Component {
 
     this.props.addPerson({
       firstname: firstNameElement.value,
-      lastname: lastNameElement.value
+      lastname: lastNameElement.value,
     });
 
-    firstNameElement.value = "";
-    lastNameElement.value = "";
+    firstNameElement.value = '';
+    lastNameElement.value = '';
 
     firstNameElement.focus();
   }
@@ -38,7 +38,7 @@ class PersonInput extends Component {
 }
 
 PersonInput.propTypes = {
-  addPerson: PropTypes.func.isRequired
+  addPerson: PropTypes.func.isRequired,
 };
 
 export default PersonInput;

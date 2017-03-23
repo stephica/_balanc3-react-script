@@ -1,7 +1,9 @@
-import rootReducer from '../reducers';
-import {createStore} from 'redux';
+import people from '../components/peopleContainer/reducers';
+import { createStore, combineReducers } from 'redux';
 
-export default (initialState) => {
+const rootReducer = combineReducers({ people });
+
+export default initialState => {
   return createStore(
     rootReducer,
     initialState,

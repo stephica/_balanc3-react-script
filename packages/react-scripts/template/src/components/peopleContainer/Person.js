@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
-const Person = ({person}) => {
+const Person = ({ person }) => {
   return (
     <div>
       {person.lastname}, {person.firstname}
@@ -9,7 +9,7 @@ const Person = ({person}) => {
 };
 
 Person.propTypes = {
-  person: PropTypes.object.isRequired
+  person: PropTypes.object.isRequired,
 };
 
 export default Person;

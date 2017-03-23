@@ -1,4 +1,4 @@
-import { $addPerson } from '../actions';
+import { $addPerson } from './actions';
 
 export default (state = [], action) => {
   switch (action.type) {
