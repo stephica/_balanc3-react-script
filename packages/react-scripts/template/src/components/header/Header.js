@@ -22,6 +22,10 @@ const DropdownOptions = styled('div')`
   display: none;
 `;
 
+const HeaderLogo = styled('p')`
+  color: ${props => props.theme.gray100}
+`;
+
 const Dropdown = () => (
   <Hover>
     {isHovered => (
@@ -44,9 +48,7 @@ const Header = () => {
   return (
     <HeaderRow alignItems="center">
       <Link to="/" style={{ margin: '-3px 124px 0 0' }}>
-        <div>
-          <p> ethereum starter </p>
-        </div>
+        <HeaderLogo> ethereum starter </HeaderLogo>
       </Link>
 
       {/* <Dropdown /> */}
