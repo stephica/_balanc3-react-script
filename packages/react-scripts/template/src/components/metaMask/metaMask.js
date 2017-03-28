@@ -9,7 +9,7 @@ const Ethereum = compose(
           () => {
             this.props.setAccounts(window.web3.eth.accounts);
           },
-          100
+          1000
         );
       }
     },

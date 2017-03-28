@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { css } from 'styled-components';
 
 const color = (color, percent) => {

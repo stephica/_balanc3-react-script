@@ -26,19 +26,21 @@ export default () => (
     <p>
       This repo is meant to be slightly opinionated,
       containing commonly used react tools such as:
-      <ul>
-        <li><StyledLink to="http://redux.js.org/">redux</StyledLink></li>
-        <li>
-          <StyledLink to="https://github.com/reacttraining/react-router">
-            react router
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink to="https://styled-components.com/">
-            styled-components
-          </StyledLink>
-        </li>
-      </ul>
+    </p>
+    <ul>
+      <li><StyledLink to="http://redux.js.org/">redux</StyledLink></li>
+      <li>
+        <StyledLink to="https://github.com/reacttraining/react-router">
+          react router
+        </StyledLink>
+      </li>
+      <li>
+        <StyledLink to="https://styled-components.com/">
+          styled-components
+        </StyledLink>
+      </li>
+    </ul>
+    <p>
       The following link is an implementation of React Router and will take you to a
       {' '}
       <StyledLink to="/redux">redux example</StyledLink>
