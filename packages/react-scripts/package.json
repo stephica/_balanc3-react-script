@@ -1,7 +1,7 @@
 {
-  "name": "johndangerstorey-react-scripts",
-  "version": "0.9.4",
-  "description": "Configuration and scripts for create-john-react-app.",
+  "name": "ethereum-react-script",
+  "version": "0.1.0",
+  "description": "Configuration and scripts for create-ethereum-react-app.",
   "repository": "johndangerstorey/create-react-app",
   "license": "BSD-3-Clause",
   "engines": {
