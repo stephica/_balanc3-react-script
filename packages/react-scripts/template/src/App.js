@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import baseStyles from './components/base/base-styles';
+import ReduxExample from './components/reduxExample';
 import { Route } from 'react-router-dom';
 import Home from './components/home';
 import Header from './components/header';
-
-const _home = () => <div>Test content</div>;
 
 class App extends Component {
   render() {
@@ -13,7 +12,7 @@ class App extends Component {
       <div>
         <Header />
         <Route exact path="/" component={Home} />
-        <Route exact path="/test" component={_home} />
+        <Route exact path="/redux" component={ReduxExample} />
       </div>
     );
   }
