@@ -2,6 +2,7 @@ import React from 'react';
 import Buffer from '../buffer';
 import { Link } from 'react-router-dom';
 import MetaMask from '../metaMask';
+import TxSignButton from '../txSignButton';
 import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
@@ -57,6 +58,7 @@ export default () => (
                 Awesome! Web3 instance of Ethereum is detected on your browser with account:
                 {' '}
                 {account}
+                <TxSignButton />
               </GoodBox>}
             {!account &&
               <BadBox>
