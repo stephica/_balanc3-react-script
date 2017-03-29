@@ -6,14 +6,19 @@ import configureStore from './store/configure-store';
 import { ThemeProvider } from 'styled-components';
 import theme from './components/base/theme';
 import { BrowserRouter as Router } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
+    {/* for styled components */}
     <ThemeProvider theme={theme}>
-      <Router>
-        <App />
-      </Router>
+      {/* for material design */}
+      <MuiThemeProvider>
+        <Router>
+          <App />
+        </Router>
+      </MuiThemeProvider>
     </ThemeProvider>
   </Provider>,
   document.getElementById('root')

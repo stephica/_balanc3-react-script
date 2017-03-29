@@ -1,6 +1,7 @@
 import React from 'react';
 import Buffer from '../buffer';
 import { Link } from 'react-router-dom';
+import { RaisedButton } from 'material-ui';
 import MetaMask from '../metaMask';
 import TxSignButton from '../txSignButton';
 import styled from 'styled-components';
@@ -58,6 +59,7 @@ export default () => (
                 Awesome! Web3 instance of Ethereum is detected on your browser with account:
                 {' '}
                 {account}
+                <RaisedButton> Test </RaisedButton>
                 <TxSignButton />
               </GoodBox>}
             {!account &&
@@ -75,6 +77,12 @@ export default () => (
                 </StyledLink>
                 {' '}
                 in order to get the most out of this starter kit.
+                <RaisedButton
+                  href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
+                  primary
+                >
+                  Download Chrome Extension
+                </RaisedButton>
               </BadBox>}
           </div>
         );
