@@ -1,5 +1,6 @@
 import { injectGlobal } from 'styled-components';
 import typography from './typography';
+import theme from './theme';
 
 export default () => injectGlobal`
   ${typography}

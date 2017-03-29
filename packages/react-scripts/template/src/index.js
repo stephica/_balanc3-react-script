@@ -7,7 +7,27 @@ import { ThemeProvider } from 'styled-components';
 import theme from './components/base/theme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: '#fff',
+    primary2Color: '#fff',
+    primary3Color: '#fff',
+    accent1Color: '#fff',
+    accent2Color: '#fff',
+    accent3Color: '#fff',
+    textColor: '#fff',
+    alternateTextColor: '#fff',
+    canvasColor: '#fff',
+    borderColor: '#fff',
+    pickerHeaderColor: '#fff',
+    shadowColor: '#fff',
+  },
+});
 const store = configureStore();
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { boxShadowTight } from '../base/style-utils';
+import Hover from '../hover';
 import Buffer from '../buffer';
 
 const HeaderRow = styled('div')`
@@ -11,7 +13,7 @@ const HeaderRow = styled('div')`
 `;
 
 const HeaderLink = styled(Link)`
-  color: ${props => props.theme.gray100};
+  color: ${props => props.theme.white};
   margin-right: 20px;
 `;
 

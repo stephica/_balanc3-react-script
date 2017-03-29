@@ -2,6 +2,7 @@ import React from 'react';
 import Buffer from '../buffer';
 import { Link } from 'react-router-dom';
 import { RaisedButton } from 'material-ui';
+import Button from '../button';
 import MetaMask from '../metaMask';
 import TxSignButton from '../txSignButton';
 import styled from 'styled-components';
@@ -11,20 +12,20 @@ const StyledLink = styled(Link)`
   cursor: pointer;
   color: ${props => props.theme.primary}
 `;
+
 const Box = styled('div')`
   padding: 20px;
   max-width: 600px;
   border: 3px solid;
   border-radius: 5px;
 `;
+
 const GoodBox = styled(Box)` border-color: ${props => props.theme.primary} `;
 const BadBox = styled(Box)` border-color: ${props => props.theme.danger} `;
 
 export default () => (
   <Buffer>
-    <div>
-      <h2>React Ethereum Starter</h2>
-    </div>
+    <h2>React Ethereum Starter</h2>
     <p>
       This repo is meant to be slightly opinionated,
       containing commonly used react tools such as:
@@ -46,6 +47,7 @@ export default () => (
       The following link is an implementation of React Router and will take you to a
       {' '}
       <StyledLink to="/redux">redux example</StyledLink>
+      {' '}
       .
       Below is an example of a "styled component" that detects an Ethereum account, most likely from Meta Mask:
     </p>
@@ -59,8 +61,12 @@ export default () => (
                 Awesome! Web3 instance of Ethereum is detected on your browser with account:
                 {' '}
                 {account}
-                <RaisedButton> Test </RaisedButton>
-                <TxSignButton />
+                <p>
+                  Go ahead and press the button to sign an example transaction.
+                </p>
+                <div style={{ display: 'block' }}>
+                  <TxSignButton />
+                </div>
               </GoodBox>}
             {!account &&
               <BadBox>
@@ -73,16 +79,18 @@ export default () => (
                 <StyledLink
                   to="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
                 >
-                  chrome extension
+                  {' '}chrome extension{' '}
                 </StyledLink>
                 {' '}
                 in order to get the most out of this starter kit.
-                <RaisedButton
-                  href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
-                  primary
-                >
-                  Download Chrome Extension
-                </RaisedButton>
+                <div style={{ display: 'block', marginTop: 20 }}>
+                  <Button
+                    href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
+                    primary
+                  >
+                    Download
+                  </Button>
+                </div>
               </BadBox>}
           </div>
         );

@@ -1,18 +1,35 @@
-import generateTheme from './generateTheme';
-const colors = {
-  default: '#F2F2F2',
-  primary: '#36C6B1',
-  secondary: '#FF8188',
-  alternate: '#54B1CC',
-  danger: '#ED4750',
-  info: '#B384BA',
-  warning: '#F6BB43',
-  dark: '#203640',
-};
+/*
+*
+* Blends and Meshes the colors from Material Design
+* for use in styled components
+*
+*/
+import {
+  cyan500,
+  cyan700,
+  pinkA200,
+  red700,
+  purple300,
+  orange500,
+  grey100,
+  grey300,
+  grey400,
+  grey500,
+  white,
+  darkBlack,
+  fullBlack,
+} from 'material-ui/styles/colors';
 
-const fonts = {
-  primaryFont: '"Proxima Nova", sans-serif',
-  secondaryFont: '"Azo Sans", sans-serif',
+const theme = {
+  default: grey100,
+  primary: cyan500,
+  secondary: pinkA200,
+  alternate: cyan700,
+  danger: red700,
+  info: purple300,
+  dark: darkBlack,
+  black: fullBlack,
+  white: white,
+  warning: orange500,
 };
-
-export default generateTheme({ colors, fonts });
+export default theme;
