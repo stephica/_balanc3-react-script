@@ -1,7 +1,6 @@
 import React from 'react';
 import Buffer from '../buffer';
 import { Link } from 'react-router-dom';
-import { RaisedButton } from 'material-ui';
 import Button from '../button';
 import MetaMask from '../metaMask';
 import TxSignButton from '../txSignButton';

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { boxShadowTight } from '../base/style-utils';
-import Hover from '../hover';
 import Buffer from '../buffer';
 
 const HeaderRow = styled('div')`
