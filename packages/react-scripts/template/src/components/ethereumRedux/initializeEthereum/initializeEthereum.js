@@ -1,8 +1,6 @@
-import { findDOMNode } from 'react-dom';
-import { PropTypes, Component } from 'react';
-import { compose, lifecycle, withState, setPropTypes } from 'recompose';
+import { PropTypes } from 'react';
+import { compose, lifecycle, setPropTypes } from 'recompose';
 import { web3Found } from '../actions';
-import { getAccounts, getEth } from '../reducers';
 import Eth from 'ethjs';
 
 export default compose(
@@ -23,12 +21,15 @@ export default compose(
       const checkForWeb3 = function() {
         if (occurance < 100) {
           occurance++;
-          if (typeof web3 !== 'undefined') {
-            if (!eth || accounts.toString() !== web3.eth.accounts.toString()) {
+          if (typeof window.web3 !== 'undefined') {
+            if (
+              !eth ||
+              accounts.toString() !== window.web3.eth.accounts.toString()
+            ) {
               // eth doesn't exist || new accounts
               console.log('Updating Ethereum info from Mist or Meta Mask');
-              accounts = web3.eth.accounts;
-              eth = new Eth(web3.currentProvider);
+              accounts = window.web3.eth.accounts;
+              eth = new Eth(window.web3.currentProvider);
               store.dispatch(web3Found(accounts, true, eth));
             }
           } else if (!eth) {
