@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import Ethereum from './ethereum';
 import { getEth, getAccounts } from '../reducers';
 
 const mapStateToProps = (state, props) => {
@@ -10,4 +9,5 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default connect(mapStateToProps)(Ethereum);
+export default connect(mapStateToProps)(({ accounts, eth, children }) =>
+  children({ accounts, eth }));

@@ -1,6 +1,6 @@
 {
   "name": "ethereum-react",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Configuration and scripts for create-ethereum-react-app.",
   "repository": "johndangerstorey/create-react-app",
   "license": "BSD-3-Clause",
