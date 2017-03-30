@@ -18,12 +18,12 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       {/* for material design */}
       <MuiThemeProvider>
-        <Router>
-          {/* adds ethereum info */}
-          <InitializeEthereum store={store}>
+        {/* adds ethereum info */}
+        <InitializeEthereum store={store}>
+          <Router>
             <App />
-          </InitializeEthereum>
-        </Router>
+          </Router>
+        </InitializeEthereum>
       </MuiThemeProvider>
     </ThemeProvider>
   </Provider>,
