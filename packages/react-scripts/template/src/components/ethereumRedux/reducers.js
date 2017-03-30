@@ -14,5 +14,5 @@ export default (state = {}, action) => {
   }
 };
 
-export const getEth = state => state.eth;
-export const getAccounts = state => state.accounts;
+export const getEth = state => state.ethereum.eth;
+export const getAccounts = state => state.ethereum.accounts;

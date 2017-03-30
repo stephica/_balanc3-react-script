@@ -2,7 +2,7 @@ import React from 'react';
 import Buffer from '../buffer';
 import { Link } from 'react-router-dom';
 import Button from '../button';
-import MetaMask from '../metaMask';
+import { Ethereum } from '../ethereumRedux';
 import TxSignButton from '../txSignButton';
 import styled from 'styled-components';
 
@@ -25,8 +25,8 @@ const BadBox = styled(Box)` border-color: ${props => props.theme.danger} `;
 export default () => (
   <Buffer>
     <h2>React Ethereum Starter</h2>
-    <MetaMask>
-      {accounts => {
+    <Ethereum>
+      {({ accounts = [], eth }) => {
         const account = accounts.length ? accounts : null;
         return (
           <div>
@@ -46,7 +46,7 @@ export default () => (
               <BadBox>
                 Web3 instance of Ethereum not detected, consider downloading
                 {' '}
-                <StyledLink to="https://metamask.io/">MetaMask</StyledLink>
+                <StyledLink to="https://metamask.io/">Ethereum</StyledLink>
                 {' '}
                 and using the
                 {' '}
@@ -69,13 +69,24 @@ export default () => (
           </div>
         );
       }}
-    </MetaMask>
+    </Ethereum>
     <p>
       This repo is meant to be slightly opinionated,
       containing commonly used react tools such as:
     </p>
     <ul>
+      <li>
+        <StyledLink to="https://github.com/ethjs/ethjs">ethjs</StyledLink>
+      </li>
       <li><StyledLink to="http://redux.js.org/">redux</StyledLink></li>
+      <li>
+        <StyledLink to="https://github.com/acdlite/recompose">
+          recompose
+        </StyledLink>
+      </li>
+      <li>
+        <StyledLink to="http://www.material-ui.com/">material-ui</StyledLink>
+      </li>
       <li>
         <StyledLink to="https://github.com/reacttraining/react-router">
           react router

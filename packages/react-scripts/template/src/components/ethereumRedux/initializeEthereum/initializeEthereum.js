@@ -24,9 +24,9 @@ export default compose(
         if (occurance < 100) {
           occurance++;
           if (typeof web3 !== 'undefined') {
-            console.log('Mist or MetaMask used');
             if (!eth || accounts.toString() !== web3.eth.accounts.toString()) {
               // eth doesn't exist || new accounts
+              console.log('Updating Ethereum info from Mist or Meta Mask');
               accounts = web3.eth.accounts;
               eth = new Eth(web3.currentProvider);
               store.dispatch(web3Found(accounts, true, eth));
