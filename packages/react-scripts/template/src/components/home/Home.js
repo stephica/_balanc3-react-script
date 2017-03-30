@@ -25,31 +25,6 @@ const BadBox = styled(Box)` border-color: ${props => props.theme.danger} `;
 export default () => (
   <Buffer>
     <h2>React Ethereum Starter</h2>
-    <p>
-      This repo is meant to be slightly opinionated,
-      containing commonly used react tools such as:
-    </p>
-    <ul>
-      <li><StyledLink to="http://redux.js.org/">redux</StyledLink></li>
-      <li>
-        <StyledLink to="https://github.com/reacttraining/react-router">
-          react router
-        </StyledLink>
-      </li>
-      <li>
-        <StyledLink to="https://styled-components.com/">
-          styled-components
-        </StyledLink>
-      </li>
-    </ul>
-    <p>
-      The following link is an implementation of React Router and will take you to a
-      {' '}
-      <StyledLink to="/redux">redux example</StyledLink>
-      {' '}
-      .
-      Below is an example of a "styled component" that detects an Ethereum account, most likely from Meta Mask:
-    </p>
     <MetaMask>
       {accounts => {
         const account = accounts.length ? accounts : null;
@@ -95,6 +70,31 @@ export default () => (
         );
       }}
     </MetaMask>
+    <p>
+      This repo is meant to be slightly opinionated,
+      containing commonly used react tools such as:
+    </p>
+    <ul>
+      <li><StyledLink to="http://redux.js.org/">redux</StyledLink></li>
+      <li>
+        <StyledLink to="https://github.com/reacttraining/react-router">
+          react router
+        </StyledLink>
+      </li>
+      <li>
+        <StyledLink to="https://styled-components.com/">
+          styled-components
+        </StyledLink>
+      </li>
+    </ul>
+    <p>
+      The following link is an implementation of React Router and will take you to a
+      {' '}
+      <StyledLink to="/redux">redux example</StyledLink>
+      {' '}
+      .
+      Below is an example of a "styled component" that detects an Ethereum account, most likely from Meta Mask:
+    </p>
     <p>
       Oh yeah, one more thing.  This repo is a personal project.  If you've somehow stumbled upon this and want to reach me, email me at
       {' '}

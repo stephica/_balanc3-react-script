@@ -1,7 +1,11 @@
 import people from '../components/peopleContainer/reducers';
+import ethereum from '../components/ethereumRedux/reducers';
 import { createStore, combineReducers } from 'redux';
 
-const rootReducer = combineReducers({ people });
+const rootReducer = combineReducers({
+  people,
+  ethereum,
+});
 
 export default initialState => {
   return createStore(
