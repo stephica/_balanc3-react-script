@@ -7,8 +7,4 @@ const mapStateToProps = (state, props) => ({
   accounts: getAccounts(state),
 });
 
-const mapActionsToProps = {
-  // actions
-};
-
-export default connect(mapStateToProps, mapActionsToProps)(InitializeEthereum);
+export default connect(mapStateToProps)(InitializeEthereum);

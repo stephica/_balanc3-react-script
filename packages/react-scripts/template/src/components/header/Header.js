@@ -22,6 +22,7 @@ const Header = () => {
         <HeaderLink to="/" style={{ margin: '0 60px 0 0' }}>
           Ethereum Starter
         </HeaderLink>
+        <HeaderLink to="/examples">Examples</HeaderLink>
       </Buffer>
     </HeaderRow>
   );

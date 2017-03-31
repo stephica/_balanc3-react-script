@@ -27,7 +27,7 @@ export default compose(
               accounts.toString() !== window.web3.eth.accounts.toString()
             ) {
               // eth doesn't exist || new accounts
-              console.log('Updating Ethereum info from Mist or Meta Mask');
+              console.log('Ethereum Redux - updating from Mist or Meta Mask');
               accounts = window.web3.eth.accounts;
               eth = new Eth(window.web3.currentProvider);
               store.dispatch(web3Found(accounts, true, eth));
