@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import { Row, Col } from '../../flex';
 import styled from 'styled-components';
 
