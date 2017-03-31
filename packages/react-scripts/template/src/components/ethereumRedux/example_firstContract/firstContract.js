@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import react from 'react';
 import { Row, Col } from '../../flex';
 import styled from 'styled-components';
 
