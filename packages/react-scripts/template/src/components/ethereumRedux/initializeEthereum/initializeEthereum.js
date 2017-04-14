@@ -2,7 +2,6 @@ import { PropTypes } from 'react';
 import { compose, lifecycle, setPropTypes } from 'recompose';
 import { web3Found } from '../actions';
 import Eth from 'ethjs';
-// const _TestRPC = require('../../../utils/testrpc');
 
 export default compose(
   setPropTypes({
