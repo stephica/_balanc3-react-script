@@ -6,13 +6,15 @@ const CodeBlock = styled('pre')`
   border-left: 5px solid ${({ theme }) => theme.primary};
 `;
 
-const FirstContract = ({ simpleStore, accounts }) => (
+const FirstContract = (
+  { simpleStore, accounts, simpleStoreBytecode, abi, textareaRows }
+) => (
   <Col>
     <h4>SimpleStore Contract</h4>
     <Row flex="1" gutter="20px">
       <Col flex="1">
         <label>Set Value</label>
-        <input id="valueAmount" type="number" placeholder="i.e. 4500" />
+        {/*<input id="valueAmount" type="number" placeholder="i.e. 4500" />*/}
 
         <button id="setValue">Set Value</button>
         <button id="getValue">Get Value</button>
@@ -32,10 +34,10 @@ const FirstContract = ({ simpleStore, accounts }) => (
       </Col>
       <Col flex="1">
         <label>Bytecode</label>
-        <input id="bytecode" type="text" value="" />
+        <input value={simpleStoreBytecode} readOnly />
 
         <label>ABI</label>
-        <textarea id="abi" />
+        <textarea id="abi" value={abi} rows={textareaRows} readOnly />
       </Col>
     </Row>
 

@@ -19,7 +19,7 @@ ReactDOM.render(
       {/* for material design */}
       <MuiThemeProvider>
         {/* adds ethereum info */}
-        <InitializeEthereum store={store}>
+        <InitializeEthereum store={store} useLocalFile>
           <Router>
             <App />
           </Router>

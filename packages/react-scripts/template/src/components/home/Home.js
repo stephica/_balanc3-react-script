@@ -11,6 +11,7 @@ const Box = styled('div')`
   max-width: 600px;
   border: 3px solid;
   border-radius: 5px;
+  word-wrap: break-word;
 `;
 
 const GoodBox = styled(Box)` border-color: ${props => props.theme.primary} `;
@@ -19,6 +20,7 @@ const BadBox = styled(Box)` border-color: ${props => props.theme.danger} `;
 export default () => (
   <Buffer>
     <h2>React Ethereum Starter</h2>
+
     <Ethereum>
       {({ accounts = [], eth }) => {
         const account = accounts.length ? accounts[0] : null;
