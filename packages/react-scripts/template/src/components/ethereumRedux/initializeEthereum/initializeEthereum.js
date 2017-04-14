@@ -6,7 +6,7 @@ import Eth from 'ethjs';
 
 export default compose(
   setPropTypes({
-    store: PropTypes.object.isRequired,
+    store: PropTypes.object.isRequired
   }),
   lifecycle({
     componentDidMount() {
@@ -16,7 +16,7 @@ export default compose(
         eth,
         useTestRPC,
         useLocalFile,
-        occurance = 0,
+        occurance = 0
       } = this.props;
       /*
       // Check periodically for new identity, incase they download metamask -- stop after 100
@@ -27,7 +27,6 @@ export default compose(
           if (useLocalFile) {
             console.log('Ethereum Redux - attaching to local testrpc.js file');
             console.log('window test', window.TestRPC);
-            // console.log('local test',_TestRPC)
             var eth = new Eth(TestRPC.provider());
             eth.accounts().then(accounts => {
               occurance = 101; // stops auto update
@@ -37,8 +36,10 @@ export default compose(
             console.log('Ethereum Redux - attaching to local TestRPC');
             var web3_provider = 'http://localhost:8545';
             eth = new Eth(new Eth.HttpProvider(web3_provider));
-            occurance = 101; // stops auto update
-            store.dispatch(web3Found(accounts, true, eth));
+            eth.accounts().then(accounts => {
+              occurance = 101; // stops auto update
+              store.dispatch(web3Found(accounts, true, eth));
+            });
           } else if (typeof window.web3 !== 'undefined') {
             if (
               !eth ||
@@ -58,6 +59,6 @@ export default compose(
         }
       };
       checkForWeb3();
-    },
+    }
   })
 )(({ children }) => children);
