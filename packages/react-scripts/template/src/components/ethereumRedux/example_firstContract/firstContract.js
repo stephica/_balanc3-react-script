@@ -1,20 +1,24 @@
-import React from 'react';
-import { Row, Col } from '../../flex';
-import styled from 'styled-components';
+import React from 'react'
+import { Row, Col } from '../../flex'
+import styled from 'styled-components'
 
 const CodeBlock = styled('pre')`
   border-left: 5px solid ${({ theme }) => theme.primary};
-`;
+`
 
-const FirstContract = (
-  { simpleStore, accounts, simpleStoreBytecode, abi, textareaRows }
-) => (
+const FirstContract = ({
+  simpleStore,
+  accounts,
+  simpleStoreBytecode,
+  abi,
+  textareaRows,
+}) => (
   <Col>
     <h4>SimpleStore Contract</h4>
     <Row flex="1" gutter="20px">
       <Col flex="1">
         <label>Set Value</label>
-        {/*<input id="valueAmount" type="number" placeholder="i.e. 4500" />*/}
+        <input id="valueAmount" type="number" placeholder="i.e. 4500" />
 
         <button id="setValue">Set Value</button>
         <button id="getValue">Get Value</button>
@@ -63,5 +67,5 @@ const FirstContract = (
       }}
     />
   </Col>
-);
-export default FirstContract;
+)
+export default FirstContract
