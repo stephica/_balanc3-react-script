@@ -8,9 +8,9 @@ import theme from './components/base/theme';
 import { InitializeEthereum } from './components/ethereumRedux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-const store = configureStore();
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
+export const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>

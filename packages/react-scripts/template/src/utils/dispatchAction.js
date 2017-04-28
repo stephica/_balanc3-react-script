@@ -1,2 +1,2 @@
-import { store } from '../store/configure-store'
+import { store } from '../index'
 export default action => store.dispatch(action)

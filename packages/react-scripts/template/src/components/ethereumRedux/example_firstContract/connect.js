@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import FirstContract from './firstContract';
 import { getEth, getAccounts } from '../reducers';
+import { createSimpleStore } from './actions'
+import { dispatch } from '../../../utils'
 
 // CREATED BY TRUFFLE ON DEPLOY OF SIMPLESTORE IN src/truffle/contracts -- this will change each time run
 const SimpleStoreAddr = '0x3a5da040ac5a785cb11e1c07fc59a84aab6edc68';
@@ -41,21 +43,22 @@ const mapStateToProps = (state, props) => {
       gas: 300000,
     });
     var simpleStoreInstance;
-    SimpleStore.new({}).then(function(txHash) {
-      console.log('txHash', txHash);
-      var checkTransaction = setInterval(
-        function() {
-          eth.getTransactionReceipt(txHash).then(function(receipt) {
-            console.log('receipt', receipt);
-            if (receipt) {
-              clearInterval(checkTransaction);
-              simpleStoreInstance = SimpleStore.at(receipt.contractAddress);
-            }
-          });
-        },
-        1000
-      );
-    });
+    dispatch(createSimpleStore())
+    // SimpleStore.new({}).then(function(txHash) {
+    //   console.log('txHash', txHash);
+    //   var checkTransaction = setInterval(
+    //     function() {
+    //       eth.getTransactionReceipt(txHash).then(function(receipt) {
+    //         console.log('receipt', receipt);
+    //         if (receipt) {
+    //           clearInterval(checkTransaction);
+    //           simpleStoreInstance = SimpleStore.at(receipt.contractAddress);
+    //         }
+    //       });
+    //     },
+    //     1000
+    //   );
+    // });
   }
   // TODO: calculate how many rows we actually need -- or create a re-sizing textarea component
   return {
