@@ -4,7 +4,7 @@ import { createStore, combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
   people,
-  ethereum
+  ethereum,
 })
 
 export default initialState => {
