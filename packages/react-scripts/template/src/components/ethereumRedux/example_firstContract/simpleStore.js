@@ -6,7 +6,7 @@ const CodeBlock = styled('pre')`
   border-left: 5px solid ${({ theme }) => theme.primary};
 `
 
-const FirstContract = ({
+export default ({
   simpleStore,
   accounts,
   simpleStoreBytecode,
@@ -68,4 +68,3 @@ const FirstContract = ({
     />
   </Col>
 )
-export default FirstContract

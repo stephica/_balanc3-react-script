@@ -5,11 +5,11 @@ export default (state = {}, action) => {
     case $simpleStoreCreated:
       return {
         ...state,
-        address: action.accounts,
+        address: action.address,
       }
     default:
       return state
   }
 }
 
-export const getAddress = state => state.simpleStore.address
+export const getSimpleStoreHash = state => state.simpleStore.address || null
