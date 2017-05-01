@@ -1,6 +1,11 @@
 import { createLogic } from 'redux-logic'
 import { getEth, getAccounts } from '../reducers'
-import { $createSimpleStore, simpleStoreCreated } from './actions'
+import {
+  $createSimpleStore,
+  simpleStoreCreated,
+  $setSimpleStoreValue,
+} from './actions'
+import { getSimpleStoreInstance } from './reducers'
 
 // CREATED BY TRUFFLE ON DEPLOY OF SIMPLESTORE IN src/truffle/contracts -- this will change each time run
 export const SimpleStoreAddr = '0x3a5da040ac5a785cb11e1c07fc59a84aab6edc68'
@@ -46,4 +51,22 @@ const createSimpleStore = createLogic({
   },
 })
 
-export default [createSimpleStore]
+const setSimpleStoreValue = createLogic({
+  type: $setSimpleStoreValue,
+  process({ getState, action }, dispatch, done) {
+    const state = getState()
+    const instance = getSimpleStoreInstance(state)
+    console.log('value', action.value)
+    instance
+      .set(action.value)
+      .then(setTxHash => {
+        debugger
+        // TODO: setHappened - pass in Hash
+      })
+      .catch(err => {
+        // TODO: setError
+      })
+  },
+})
+
+export default [createSimpleStore, setSimpleStoreValue]

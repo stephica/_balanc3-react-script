@@ -25,7 +25,6 @@ export default compose(
           occurance++
           if (useLocalFile) {
             console.log('Ethereum Redux - attaching to local testrpc.js file')
-            console.log('window test', window.TestRPC)
             var eth = new Eth(TestRPC.provider())
             eth.accounts().then(accounts => {
               occurance = 101 // stops auto update

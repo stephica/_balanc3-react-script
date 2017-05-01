@@ -14,5 +14,11 @@ export const simpleStoreInfo = makeActionCreator(
   'address'
 )
 
+export const $setSimpleStoreValue = 'SET_SIMPLE_STORE_VALUE'
+export const setSimpleStoreValue = makeActionCreator(
+  $setSimpleStoreValue,
+  'value'
+)
+
 export const $createSimpleStore = 'CREATE_SIMPLE_STORE'
 export const createSimpleStore = makeActionCreator($createSimpleStore)
