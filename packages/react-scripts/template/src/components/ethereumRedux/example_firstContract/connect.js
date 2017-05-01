@@ -1,7 +1,11 @@
 import { connect } from 'react-redux'
 import SimpleStore from './simpleStore'
 import { createSimpleStore, simpleStoreInfo } from './actions'
-import { getSimpleStoreHash, getSimpleStoreContract, getSimpleStoreInstance } from './reducers'
+import {
+  getSimpleStoreHash,
+  getSimpleStoreContract,
+  getSimpleStoreInstance,
+} from './reducers'
 import { getEth, getAccounts } from '../reducers'
 import { dispatch } from '../../../utils'
 import { SimpleStoreAddr, SimpleStoreBytecode, SimpleStoreABI } from './logic'

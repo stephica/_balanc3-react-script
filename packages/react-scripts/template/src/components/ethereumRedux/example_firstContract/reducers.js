@@ -1,4 +1,8 @@
-import { $simpleStoreCreated, $createSimpleStore, $simpleStoreInfo } from './actions'
+import {
+  $simpleStoreCreated,
+  $createSimpleStore,
+  $simpleStoreInfo,
+} from './actions'
 
 export default (state = {}, action) => {
   switch (action.type) {
@@ -6,7 +10,7 @@ export default (state = {}, action) => {
       return {
         ...state,
         hash: action.hash,
-        contract: action.contract
+        contract: action.contract,
       }
     case $simpleStoreInfo:
       return {
@@ -20,6 +24,8 @@ export default (state = {}, action) => {
 }
 
 export const getSimpleStoreHash = state => state.simpleStore.hash || null
-export const getSimpleStoreContract = state => state.simpleStore.contract || null
+export const getSimpleStoreContract = state =>
+  state.simpleStore.contract || null
 export const getSimpleStoreAddress = state => state.simpleStore.address || null
-export const getSimpleStoreInstance = state => state.simpleStore.instance || null
+export const getSimpleStoreInstance = state =>
+  state.simpleStore.instance || null
