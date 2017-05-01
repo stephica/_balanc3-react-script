@@ -7,8 +7,17 @@ import { createLogicMiddleware } from 'redux-logic'
 import simpleStoreLogic
   from '../components/ethereumRedux/example_firstContract/logic'
 
+// TRIAL
+const composeEnhancers = typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+  : compose
 const logicMiddleware = createLogicMiddleware(simpleStoreLogic)
 const middleware = applyMiddleware(logicMiddleware)
+const enhancer = composeEnhancers(
+  middleware
+  // other store enhancers if any
+)
 
 const rootReducer = combineReducers({
   people,
@@ -16,22 +25,6 @@ const rootReducer = combineReducers({
   simpleStore,
 })
 
-// TRIAL
-const composeEnhancers = typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
-  : compose
-
-const enhancer = composeEnhancers(
-  middleware
-  // other store enhancers if any
-)
-
 export default initialState => {
-  // return createStore(
-  //   rootReducer,
-  //   initialState,
-  //   middleware
-  // )
   return createStore(rootReducer, initialState, enhancer)
 }

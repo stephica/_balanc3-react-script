@@ -30,16 +30,14 @@ const createSimpleStore = createLogic({
   process({ getState, action }, dispatch, done) {
     const state = getState()
     const eth = getEth(state)
-    debugger
     if (eth) {
       var SimpleStore = eth.contract(SimpleStoreABI, SimpleStoreBytecode, {
         from: getAccounts(state)[0],
         gas: 300000,
       })
-      debugger
       SimpleStore.new({}).then(function(txHash) {
-        debugger
-        dispatch(simpleStoreCreated(txHash))
+        console.log('hash', txHash)
+        dispatch(simpleStoreCreated(txHash, SimpleStore))
         done()
       })
     } else {
