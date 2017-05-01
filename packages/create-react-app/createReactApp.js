@@ -220,10 +220,12 @@ function run(root, appName, version, verbose, originalDirectory, template) {
 
   const useYarn = shouldUseYarn();
   getPackageName(packageToInstall)
-    .then(packageName => checkIfOnline(useYarn).then(isOnline => ({
-      isOnline: isOnline,
-      packageName: packageName,
-    })))
+    .then(packageName =>
+      checkIfOnline(useYarn).then(isOnline => ({
+        isOnline: isOnline,
+        packageName: packageName,
+      }))
+    )
     .then(info => {
       const isOnline = info.isOnline;
       const packageName = info.packageName;

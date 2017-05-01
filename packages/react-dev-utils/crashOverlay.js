@@ -182,8 +182,10 @@ function consume(error) {
   return enhancedFramesPromise.then(function(enhancedFrames) {
     enhancedFrames = enhancedFrames.filter(function(_ref) {
       var functionName = _ref.functionName;
-      return functionName == null ||
-        functionName.indexOf('__stack_frame_overlay_proxy_console__') === -1;
+      return (
+        functionName == null ||
+        functionName.indexOf('__stack_frame_overlay_proxy_console__') === -1
+      );
     });
     recorded[++errorsConsumed] = {
       error: error,
@@ -531,11 +533,13 @@ function createCode(document, sourceLines, lineNum, columnNum, contextSize) {
 }
 
 function isInternalFile(url, sourceFileName) {
-  return url.indexOf('/~/') !== -1 ||
+  return (
+    url.indexOf('/~/') !== -1 ||
     url.indexOf('/node_modules/') !== -1 ||
     url.trim().indexOf(' ') !== -1 ||
     sourceFileName == null ||
-    sourceFileName.length === 0;
+    sourceFileName.length === 0
+  );
 }
 
 function getGroupToggle(document, omitsCount, omitBundle) {
@@ -1034,12 +1038,9 @@ function render(name, message, resolvedFrames) {
 
     if (w != null) {
       w.onkeydown = function(event) {
-        keyHandler(
-          function(type) {
-            return shortcutHandler(type);
-          },
-          event
-        );
+        keyHandler(function(type) {
+          return shortcutHandler(type);
+        }, event);
       };
     }
     injectCss(iframeReference.contentDocument, css);
