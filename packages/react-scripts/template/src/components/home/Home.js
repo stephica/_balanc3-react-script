@@ -1,9 +1,7 @@
 import React from 'react'
 import Buffer from '../buffer'
 import StyledLink from '../styled_link'
-import Button from '../button'
 import { Ethereum } from '../ethereumRedux'
-import TxSignButton from '../txSignButton'
 import styled from 'styled-components'
 
 const Box = styled('div')`
@@ -19,55 +17,10 @@ const BadBox = styled(Box)` border-color: ${props => props.theme.danger} `
 
 export default () => (
   <Buffer>
-    <h2>React Ethereum Starter</h2>
-
-    <Ethereum>
-      {({ accounts = [], eth }) => {
-        const account = accounts.length ? accounts[0] : null
-        return (
-          <div>
-            {account &&
-              <GoodBox>
-                Awesome! Ethereum is detected on your browser with account:
-                {' '}
-                {account}
-                {/*<p>
-                  Go ahead and press the button to sign an example transaction.
-                </p>
-                <div style={{ display: 'block' }}>
-                  <TxSignButton />
-                </div>*/}
-              </GoodBox>}
-            {!account &&
-              <BadBox>
-                Web3 instance of Ethereum not detected, consider downloading
-                {' '}
-                <StyledLink to="https://metamask.io/">Ethereum</StyledLink>
-                {' '}
-                and using the
-                {' '}
-                <StyledLink to="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">
-                  {' '}chrome extension{' '}
-                </StyledLink>
-                {' '}
-                in order to get the most out of this starter kit.
-                <div style={{ display: 'block', marginTop: 20 }}>
-                  <Button
-                    href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
-                    primary
-                  >
-                    Download
-                  </Button>
-                </div>
-              </BadBox>}
-          </div>
-        )
-      }}
-    </Ethereum>
+    <h2>Balanc3 Starter</h2>
     <p>
-      The box above box is an example of a "styled component" that detects an Ethereum account, most likely from a local testrpc.js file or Meta Mask -- depending on my phase of development. Next is a React Router link that will take you to a
       {' '}
-      <StyledLink to="/redux">redux example</StyledLink>
+      Here is a link to our <StyledLink to="/redux">redux example</StyledLink>
       {' '}
       .
     </p>
